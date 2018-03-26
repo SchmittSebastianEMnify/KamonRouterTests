@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>schmittsebastian</groupId>
+  <artifactId>KamonRouterTests</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>KamonRouterTests</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-kernel_2.11</artifactId>
+      <version>2.5-M1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-actor_2.11</artifactId>
+      <version>2.5.8</version>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-cluster_2.11</artifactId>
+      <version>2.5.8</version>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-remote_2.11</artifactId>
+      <version>2.5.8</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.kamon</groupId>
+      <artifactId>kamon-core_2.11</artifactId>
+      <version>1.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.kamon</groupId>
+      <artifactId>kamon-system-metrics_2.11</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.kamon</groupId>
+      <artifactId>kamon-akka-2.5_2.11</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.kamon</groupId>
+      <artifactId>kamon-akka-remote-2.5_2.11</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.kamon</groupId>
+      <artifactId>kamon-jdbc_2.11</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.kamon</groupId>
+      <artifactId>kamino-reporter_2.11</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <killAfter>-1</killAfter>
+          <mainClass>schmittsebastian.kamonrouters.RouterTest</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
